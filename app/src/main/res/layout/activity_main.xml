@@ -6,13 +6,225 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp"
+        />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/line_start"
+        app:layout_constraintTop_toTopOf="@id/line_top"
+        app:layout_constraintEnd_toStartOf="@+id/edit_btn"
+        android:visibility="visible"
+    />
+
+    <EditText
+        android:id="@+id/username_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/username"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/line_start"
+        app:layout_constraintTop_toTopOf="@id/line_top"
+        app:layout_constraintEnd_toStartOf="@+id/edit_btn"
+        android:visibility="invisible" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/line_end"
+        app:layout_constraintTop_toTopOf="@id/line_top"
+        app:layout_constraintStart_toEndOf="@+id/username"
+        android:text="@string/edit"
+        android:visibility="visible"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/line_end"
+        app:layout_constraintTop_toTopOf="@id/line_top"
+        app:layout_constraintStart_toEndOf="@+id/username"
+        android:text="@string/save"
+        android:visibility="invisible"
+        />
+
+    <View
+        android:id="@+id/divider_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_light"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/user_picture_cardview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintStart_toStartOf="@id/line_start"
+        app:layout_constraintTop_toBottomOf="@+id/divider_top">
+
+        <ImageView
+            android:id="@+id/user_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/me" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/user_pub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/num"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintStart_toEndOf="@+id/user_picture_cardview"
+        app:layout_constraintTop_toBottomOf="@+id/divider_top"
+        app:layout_constraintEnd_toStartOf="@+id/user_followers"
+        />
+
+    <TextView
+        android:id="@+id/publication"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/publication"
+        android:textColor="@color/black"
+        android:layout_marginStart="55dp"
+        app:layout_constraintStart_toEndOf="@+id/user_picture_cardview"
+        app:layout_constraintTop_toBottomOf="@+id/user_pub"
+        />
+
+    <TextView
+        android:id="@+id/user_followers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/num"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintStart_toEndOf="@+id/user_pub"
+        app:layout_constraintTop_toBottomOf="@+id/divider_top"
+        app:layout_constraintEnd_toStartOf="@+id/user_sub"
+        />
+
+    <TextView
+        android:id="@+id/followers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/followers"
+        android:textColor="@color/black"
+        android:layout_marginStart="55dp"
+        app:layout_constraintStart_toEndOf="@+id/user_pub"
+        app:layout_constraintTop_toBottomOf="@+id/user_followers"
+        />
+
+    <TextView
+        android:id="@+id/user_sub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/num"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="64dp"
+        app:layout_constraintStart_toEndOf="@+id/user_followers"
+        app:layout_constraintTop_toBottomOf="@+id/divider_top"
+        />
+
+    <TextView
+        android:id="@+id/sub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/subscriptions"
+        android:textColor="@color/black"
+        android:layout_marginStart="55dp"
+        app:layout_constraintStart_toEndOf="@+id/user_followers"
+        app:layout_constraintTop_toBottomOf="@+id/user_sub"
+        />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/line_start"
+        app:layout_constraintTop_toBottomOf="@+id/user_picture_cardview"
+        app:layout_constraintBottom_toTopOf="@+id/user_pos"
+        />
+
+    <TextView
+        android:id="@+id/user_pos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pos"
+        app:layout_constraintStart_toStartOf="@id/line_start"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        app:layout_constraintBottom_toTopOf="@+id/user_description"
+        />
+
+    <TextView
+        android:id="@+id/user_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/line_start"
+        app:layout_constraintTop_toBottomOf="@+id/user_pos"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="@id/line_start"
+        app:layout_constraintTop_toBottomOf="@+id/user_description"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

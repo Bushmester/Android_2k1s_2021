@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Android_2k1s_2021</string>
+
+    <string name="num">202</string>
+    <string name="publication">Public...</string>
+    <string name="followers">Follow...</string>
+    <string name="subscriptions">Subsc...</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="content">CONTENT завезут потом, когда нибудь</string>
+
+    <string name="username">bbbuusshhh</string>
+    <string name="name">ilnar bush</string>
+    <string name="pos">Artist</string>
+    <string name="description">bbbehetle bbbul bblyat</string>
 </resources>
