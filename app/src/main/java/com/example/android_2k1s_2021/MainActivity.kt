@@ -2,10 +2,17 @@ package com.example.android_2k1s_2021
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android_2k1s_2021.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater).also {
+            setContentView(it.root)
+        }
     }
 }
