@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Android_2k1s_2021</string>
+
+    <string name="profile">PROFILE</string>
+    <string name="message">MESSAGE</string>
+    <string name="news">NEWS</string>
 </resources>
