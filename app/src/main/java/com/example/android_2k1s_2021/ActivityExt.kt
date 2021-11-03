@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 
-fun AppCompatActivity.findController (id: Int) : NavController {
-    return (supportFragmentManager.findFragmentById(id) as NavHostFragment).navController
+fun AppCompatActivity.findController (id: Int) : NavController? {
+    val selectedFragment = supportFragmentManager.findFragmentById(id) as NavHostFragment?
+    return selectedFragment?.navController
 }

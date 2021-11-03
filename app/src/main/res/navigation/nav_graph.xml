@@ -2,6 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chooseCharacterFragment">
 
+    <fragment
+        android:id="@+id/chooseCharacterFragment"
+        android:name="com.example.android_2k1s_2021.ChooseCharacterFragment"
+        android:label="fragment_choose_character"
+        tools:layout="@layout/fragment_choose_character" >
+        <action
+            android:id="@+id/action_chooseCharacterFragment_to_characterInfoFragment"
+            app:destination="@id/characterInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterInfoFragment"
+        android:name="com.example.android_2k1s_2021.CharacterInfoFragment"
+        android:label="fragment_character_info"
+        tools:layout="@layout/fragment_character_info" />
 </navigation>

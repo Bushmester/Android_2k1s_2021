@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Android_2k1s_2021</string>
+
+    <string name="character">Character</string>
+    <string name="character_name">Character Name</string>
+    <string name="character_desc">Character Description</string>
+    <string name="character_quote">Character Quote</string>
 </resources>
